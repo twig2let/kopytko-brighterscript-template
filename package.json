@@ -1,0 +1,28 @@
+{
+    "name": "brighterscript-kopytko-starter",
+    "version": "0.0.1",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "package": "ENV=production kopytko build",
+        "test": "kopytko test",
+        "lint": "eslint --ext .brs src/",
+        "prevsc": "node plugins/brighterscript/transpile-brighterscript.js",
+        "vsc": "node node_modules/@dazn/kopytko-packager/scripts/prepare-for-vsc.js"
+    },
+    "engines": {
+        "node": ">=16.0.0",
+        "npm": ">=8.0.0"
+    },
+    "dependencies": {
+        "@dazn/kopytko-framework": "^2.0.0",
+        "@dazn/kopytko-utils": "^2.3.2"
+    },
+    "devDependencies": {
+        "@dazn/eslint-plugin-kopytko": "^2.1.0",
+        "@dazn/kopytko-cli": "^2.0.0",
+        "@dazn/kopytko-packager": "^1.2.3",
+        "brighterscript": "^0.65.4",
+        "eslint": "^8.22.0"
+    }
+}

@@ -1,0 +1,27 @@
+
+' @abstract
+function _parseResponseData(model as Object, data as Object) as Object
+    return model
+end function
+
+' @abstract
+function _parseErrorData(errorModel as Object, response as Object) as Object
+    errorModel.setFields({
+        id: response.id
+        code: response.httpstatuscode
+        reason: response.failureReason
+    })
+
+    return errorModel
+end function
+
+' @override
+function parseResponse(response as Object) as Object
+    if response.isSuccess
+        response.data = _parseResponseData(CreateObject("roSgNode", m.modelName ?? "Node"), response.rawData)
+    else
+        response.data = _parseErrorData(CreateObject("roSgNode", "Node"), response)
+    end if
+
+    m.top.response = response
+end function

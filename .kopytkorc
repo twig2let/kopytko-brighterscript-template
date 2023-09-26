@@ -1,0 +1,44 @@
+{
+    "baseManifest": "/manifest/default.js",
+    "localManifestOverride": "/manifest/local.${args.env}.js",
+    "archivePath": "/dist/v${manifest.major_version}.${manifest.minor_version}.${manifest.build_version}-${args.env}.zip",
+    "generatedPackagePath": "/dist/v${manifest.major_version}.${manifest.minor_version}.${manifest.build_version}-${args.env}.pkg",
+    "pluginDefinitions": {
+        "remove-test-code": "/plugins/kopytko/remove-test-code",
+        "include-rale": "/plugins/kopytko/include-rale"
+    },
+    "sourceDir": "/transpiled-src",
+    "plugins": [
+        {
+            "name": "kopytko-copy-external-dependencies",
+            "preEnvironmentPlugin": true
+        }
+    ],
+    "environments": {
+        "production": {
+            "manifest": "/manifest/production.js",
+            "plugins": [
+                "remove-test-code"
+            ]
+        },
+        "staging": {
+            "manifest": "/manifest/staging.js",
+            "plugins": [
+                "remove-test-code"
+            ]
+        },
+        "test": {
+            "manifest": "/manifest/test.js",
+            "plugins": [
+                "generate-tests"
+            ]
+        },
+        "dev": {
+            "manifest": "/manifest/dev.js",
+            "plugins": [
+                "remove-test-code",
+                "include-rale"
+            ]
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="Modal" extends="KopytkoGroup">
+    <interface>
+        <!-- Inputs -->
+        <field id="backdropColor" type="color" />
+        <field id="backdropOpacity" type="float" />
+        <field id="height" type="float" />
+        <field id="width" type="float" />
+    </interface>
+
+    <script type="text/brightscript" uri="Modal.component.brs" />
+    <script type="text/brightscript" uri="Modal.template.brs" />
+
+    <script type="text/brightscript" uri="pkg:/components/kopytko_modules/dazn_kopytkoFramework_v2/utils/KopytkoGlobalNode.brs" />
+    <script type="text/brightscript" uri="pkg:/components/kopytko_modules/dazn_kopytkoFramework_v2/eventBus/EventBus.facade.brs" />
+    <script type="text/brightscript" uri="pkg:/components/kopytko_modules/dazn_kopytkoFramework_v2/modal/ModalEvents.const.brs" />
+    <script type="text/brightscript" uri="pkg:/components/kopytko_modules/dazn_kopytkoUtils_v2/ArrayUtils.brs" />
+    <script type="text/brightscript" uri="pkg:/components/kopytko_modules/dazn_kopytkoUtils_v2/functionCall.brs" />
+</component>

@@ -1,0 +1,17 @@
+{
+    "sourceMap": true,
+    "stagingDir": "transpiled-src",
+    "retainStagingDir": true,
+    "createPackage": false,
+    "watch": false,
+    "rootDir": "src",
+    "diagnosticLevel": "warn",
+    "diagnosticFilters": [
+        "components/framework/**",
+        "components/kopytko_modules/**"
+    ],
+    "files": [
+        "**/*"
+    ],
+    "plugins": []
+}

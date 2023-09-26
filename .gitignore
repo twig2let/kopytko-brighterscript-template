@@ -1,0 +1,6 @@
+/node_modules
+/transpiled-src
+/out
+/dist
+.DS_Store
+.env
