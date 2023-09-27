@@ -3,6 +3,7 @@ sub init()
         m.tracker = m.top.createChild("TrackerTask")
     #end if
 
-    app = m.top.createChild("Group")
+    app = m.top.createChild("AppView")
     app.id = "app"
+    app@.initKopytko({})
 end sub

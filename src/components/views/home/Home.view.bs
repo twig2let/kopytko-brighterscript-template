@@ -1,0 +1,6 @@
+import "pkg:/components/framework/Logger.brs"
+
+sub constructor()
+    Logger().log("Home.view > constructor")
+end sub
+

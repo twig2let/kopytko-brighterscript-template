@@ -37,6 +37,7 @@
             "manifest": "/manifest/dev.js",
             "plugins": [
                 "remove-test-code",
+                "kopytko-import-dependencies",
                 "include-rale"
             ]
         }

@@ -1,0 +1,46 @@
+import "pkg:/components/App.routing.brs"
+import "pkg:/components/enums/RoutePaths.enum.bs"
+import "pkg:/components/framework/Logger.brs"
+import "pkg:/components/framework/router/Router.facade.bs"
+
+sub constructor()
+    Logger().log("App.view > constructor")
+
+    _initialiseGlobalServices()
+
+    m._router = RouterFacade()
+end sub
+
+' Lifecycle Events
+
+sub componentDidMount()
+    Logger().log("App.view > componentDidMount")
+
+    m._router.navigate(RoutePaths.splash)
+    m.minimumSplashTimer.control = "start"
+end sub
+
+sub componentDidUpdate(prevProps as Object, prevState as Object)
+end sub
+
+' Event Handlers
+
+function onKeyEvent(key as String, press as Boolean) as Boolean
+    if NOT press then return false
+    if key = "back" then return m._router.back()
+
+    return false
+end function
+
+sub _onMinimumSplashTimerFired(event as Object)
+    m._router.navigate(RoutePaths.home)
+end sub
+
+' Helpers
+
+sub _initialiseGlobalServices()
+    Logger().log("App.view > _initialiseGlobalServices")
+
+    router = CreateObject("roSGNode", "Router")
+    router.routing = getAppRouting()
+end sub

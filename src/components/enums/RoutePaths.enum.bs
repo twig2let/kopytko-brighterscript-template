@@ -1,0 +1,4 @@
+enum RoutePaths
+    HOME = "/home"
+    SPLASH = "/splash"
+End Enum
